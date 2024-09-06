@@ -1,0 +1,147 @@
+---
+title: "PsyTrack"
+publishedAt: "2020-08-24"
+summary: "PsyTrack aids mental health professionals with client data management through a mobile app for mood tracking and a web portal for data analysis"
+---
+
+As part of my [bachelor thesis](/bachelor_thesis.pdf), I developed a proof of concept for a system that could assist mental health professionals with the follow-up of their clients. The system consists of two applications: a mobile application for the clients and a web portal for the mental health professionals.
+
+The mobile application is responsible for tracking the client's data, such as their mood, emotions, experiences, etc. Meanwhile, the web portal allows mental health professionals to keep track of, view, and analyze their clients' data to help them better understand their clients.
+
+## Tech stack
+
+- [ReactJS](https://reactnative.dev/) with [Redux](https://redux.js.org/) (state management)
+- [React Native](https://reactnative.dev/) using [Expo](https://expo.io/) with [Redux + Redux Saga](https://redux.js.org/) for state management
+- [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/) on top
+- [Docker](https://www.docker.com/)ized [Node.js](https://nodejs.org/en/) [Express](https://expressjs.com/) API for both web and mobile applications
+- [React Material UI](https://material-ui.com/) component framework for design and styling
+- [TypeScript](https://www.typescriptlang.org/) for both front-end and back-end
+
+## Mobile application
+
+### Authentication
+
+Upon startup, clients are prompted to link with their mental health professional. The mental health professional can register an account for the client and provide the ID needed to proceed.
+
+<PhotoSwipeGallery
+  id="entry"
+  col={2}
+  images={[
+    {
+      src: "/images/mheapp/entry-page.jpg",
+      width: 720,
+      height: 1480,
+    },
+    {
+      src: "/images/mheapp/qrcode-scan.jpg",
+      width: 720,
+      height: 1480,
+    },
+  ]}
+/>
+
+### Create and view mood entries (Offline first)
+
+Clients are encouraged to create daily entries that include their mood, emotions, experiences, etc. These entries are first stored locally and later synced whenever internet access is available.
+
+<PhotoSwipeGallery
+  id="entries"
+  col={3}
+  images={[
+    {
+      src: "/images/mheapp/view-entries.jpg",
+      width: 720,
+      height: 1480,
+    },
+    {
+      src: "/images/mheapp/add-entry.jpg",
+      width: 720,
+      height: 1480,
+    },
+    {
+      src: "/images/mheapp/entry-details.jpg",
+      width: 720,
+      height: 1480,
+    },
+  ]}
+/>
+
+## Web portal
+
+### Authentication
+
+Mental health professionals are free to create a new account.
+
+<PhotoSwipeGallery
+  id="portal"
+  col={2}
+  images={[
+    {
+      src: "/images/mheapp/login.png",
+      width: 1919,
+      height: 937,
+    },
+    {
+      src: "/images/mheapp/register.png",
+      width: 1920,
+      height: 936,
+    },
+  ]}
+/>
+
+### Linking with clients
+
+Mental health professionals can add or remove clients as needed. When a client is registered, a unique ID is generated for them.
+
+<PhotoSwipeGallery
+  id="portal"
+  col={2}
+  images={[
+    {
+      src: "/images/mheapp/dashboard.png",
+      width: 1920,
+      height: 942,
+    },
+    {
+      src: "/images/mheapp/link-client.png",
+      width: 1917,
+      height: 932,
+    },
+  ]}
+/>
+
+This ID can be used as a means of authentication for the client and is shared via a QR code for ease of use.
+
+<PhotoSwipeGallery
+  id="portal"
+  col={1}
+  images={[
+    {
+      src: "/images/mheapp/client-info.png",
+      width: 1920,
+      height: 939,
+    },
+  ]}
+/>
+
+### View client information and data
+
+Mental health professionals can analyze the data submitted by their clients.
+
+<PhotoSwipeGallery
+  id="portal"
+  col={1}
+  images={[
+    {
+      src: "/images/mheapp/data.png",
+      width: 1920,
+      height: 940,
+    },
+  ]}
+/>
+
+## Source code
+
+- The React Native frontend (mobile app) of this project can be found [here](https://github.com/DewitteRuben/react_native_gps_tracker).
+- The React.js frontend (web portal) of this project can be found [here](https://github.com/DewitteRuben/reactjs_mental_health_portal).
+- The Node.js backend (API) of this project can be found [here](https://github.com/DewitteRuben/backend_nodejs_ts_mental_health_app_2020).

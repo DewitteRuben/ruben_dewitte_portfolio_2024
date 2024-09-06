@@ -1,0 +1,141 @@
+---
+title: "GPS Tracker"
+publishedAt: "2020-07-22"
+summary: "GPS Tracker is a versatile mobile app for real-time location tracking, route saving, and video calling. Ideal for monitoring travels, sharing trips, and recording routes, it integrates interactive maps and WebRTC technology."
+---
+
+To learn more about integrating interactive maps (such as Google Maps or Mapbox) and WebRTC in mobile applications, I decided to create a GPS Tracker mobile app.
+
+The app allows users to track their own location, create routes, share their location in real-time, and make video calls. This app can be used to track a traveling family member, share a road trip with a friend, or record your own bike ride.
+
+Users can share a unique passcode with people they want to be tracked by. This passcode allows others to track their location.
+
+## Tech Stack
+
+- [React Native](https://reactnative.dev/) with [Redux](https://redux.js.org/) for state management
+- [React Native WebRTC](https://github.com/react-native-webrtc/react-native-webrtc) for peer-to-peer video and audio streaming
+- [Firebase](https://firebase.google.com/)'s Realtime Database for transmitting location data
+- Socket.io for STUN and TURN server setup needed for WebRTC
+- [Node.js](https://nodejs.org/en/) with [Express](https://expressjs.com/) as the web server
+- [Typescript](https://www.typescriptlang.org/) for both front-end and back-end development
+
+## Functionality
+
+### Save, Edit, and View Routes
+
+While tracking, after covering a minimum distance (default is 10 meters), users can save the current route. If they choose to save it, they will be prompted to provide details about the route.
+
+<PhotoSwipeGallery
+  id="result"
+  col={2}
+  images={[
+    {
+      src: "/images/gpsapp/gpsapp-conclude-route.jpg",
+      width: 720,
+      height: 1337,
+    },
+    {
+      src: "/images/gpsapp/gpsapp-save-route.jpg",
+      width: 720,
+      height: 1336,
+    },
+  ]}
+/>
+
+Users can later view and edit their saved routes.
+
+<PhotoSwipeGallery
+  id="result"
+  col={3}
+  images={[
+    {
+      src: "/images/gpsapp/gpsapp-saved-routes.jpg",
+      width: 720,
+      height: 1336,
+    },
+    {
+      src: "/images/gpsapp/gpsapp-edit-route.jpg",
+      width: 720,
+      height: 1336,
+    },
+    {
+      src: "/images/gpsapp/gpsapp-view-route.jpg",
+      width: 720,
+      height: 1336,
+    },
+  ]}
+/>
+
+### Sharing Location
+
+When the mobile app is first launched, a unique [ID](https://www.npmjs.com/package/shortid) is generated. This ID is specific to the mobile app and can be reset by clearing the app’s data.
+
+<PhotoSwipeGallery
+  id="result"
+  col={2}
+  images={[
+    {
+      src: "/images/gpsapp/gpsapp-settings.jpg",
+      width: 720,
+      height: 1336,
+    },
+  ]}
+/>
+
+This ID can be used to view the GPS location of the person using the standalone web application. Entering a valid ID will display the tracker's GPS location on an interactive map.
+
+<PhotoSwipeGallery
+  id="result"
+  col={2}
+  images={[
+    {
+      src: "/images/gpsapp/webapp-start-track.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/gpsapp/webapp-track-example.png",
+      width: 1920,
+      height: 937,
+    },
+  ]}
+/>
+
+### Video Call (up to 2 peers in the latest version)
+
+When the WebRTC option is enabled in the settings menu, the tracker can request a video call via the web application.
+
+<PhotoSwipeGallery
+  id="result"
+  col={2}
+  images={[
+    {
+      src: "/images/gpsapp/gpsapp-settings-webrtc.jpg",
+      width: 720,
+      height: 1337,
+    },
+    {
+      src: "/images/gpsapp/gpsapp-connection-request.jpg",
+      width: 720,
+      height: 1336,
+    },
+  ]}
+/>
+
+WebRTC uses [STUN](https://en.wikipedia.org/wiki/STUN) and/or [TURN](https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT) servers to establish a peer-to-peer connection between users.
+
+<PhotoSwipeGallery
+  id="result"
+  col={1}
+  images={[
+    {
+      src: "/images/gpsapp/webapp-peer-to-peer-call.png",
+      width: 1920,
+      height: 937,
+    },
+  ]}
+/>
+
+## Source Code
+
+The source code for this project can be found [here](https://github.com/DewitteRuben/react_native_gps_tracker).
