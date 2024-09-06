@@ -5,8 +5,12 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
+import { getBlogPosts } from "./db/blog";
+import Link from "next/link";
 
 export default function Home() {
+  const allBlogs = getBlogPosts();
+
   return (
     <section>
       <div className="flex flex-row flex-wrap">
@@ -32,6 +36,16 @@ export default function Home() {
                 <div className="flex items-center">
                   <FaEnvelope />
                   <span className="ml-2 mr-4">Email</span>
+                </div>
+              </a>
+              <a
+                href="/resume_dutch.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center">
+                  <FaLink />
+                  <span className="ml-2 mr-4">Resume (Dutch)</span>
                 </div>
               </a>
               <a
@@ -65,6 +79,35 @@ export default function Home() {
           been driven by a commitment to creating impactful solutions that make
           a difference.
         </p>
+      </div>
+      <h2 className="text-xl font-medium tracking-tighter mb-4">Personal projects</h2>
+      <div>
+        {allBlogs
+          .sort((a, b) => {
+            if (
+              new Date(a.metadata.publishedAt) >
+              new Date(b.metadata.publishedAt)
+            ) {
+              return -1;
+            }
+            return 1;
+          })
+          .map((post) => (
+            <Link
+              key={post.slug}
+              className="flex flex-col space-y-1 mb-4"
+              href={`/project/${post.slug}`}
+            >
+              <div className="w-full flex flex-col">
+                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                  {post.metadata.title}
+                  <span className="block text-slate-500 dark:text-neutral-400 font-normal text-sm mt-2">
+                    Published on {post.metadata.publishedAt}
+                  </span>
+                </p>
+              </div>
+            </Link>
+          ))}
       </div>
     </section>
   );

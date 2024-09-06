@@ -1,0 +1,148 @@
+---
+title: "Marketplace for Decor"
+publishedAt: "2020-09-04"
+summary: "A foundation for an online marketplace where users can buy and sell decoration-related goods."
+---
+
+Many online marketplaces are available today, such as Amazon, eBay, and Google Express. While most of these platforms offer a wide range of products, some cater to specific audiences. For example, Etsy focuses on handmade or vintage items, and Vinted is dedicated to selling (and swapping) clothes and accessories.
+
+Inspired by these niche platforms, I envisioned an online marketplace for decoration-related goods, taking cues from the German retail store 'Depot,' which specializes in decor items. This prototype aims to create a platform where users can buy and sell various decoration-related products.
+
+## Project Scope
+
+The project includes the following features:
+
+- **Categorization:** Items sorted by type, subcategory, etc., with categories accessible via URL (e.g., /decoration/vases-and-flowers/wreath/flowers).
+- **Filtering and Sorting:** Options by price, popularity, and date.
+- **User Accounts:** Registration, login, profile management, and viewing of other profiles.
+- **Item Management:** Add, edit, and remove items.
+- **Shopping Experience:** Shopping cart and wishlist functionality.
+- **Payment Integration:** PayPal integration.
+
+## Design Approach
+
+To ensure the marketplace is clear and easy to use, I opted for a minimalistic design created using [Figma](https://www.figma.com/).
+
+<PhotoSwipeGallery
+  id="design"
+  col={2}
+  images={[
+    {
+      src: "/images/deco-webstore/design/decoworld-home-page-design.png",
+      width: 2880,
+      height: 2048,
+      thumbWidth: 600,
+    },
+    {
+      src: "/images/deco-webstore/design/decoworld-login-page-design.png",
+      width: 2880,
+      height: 2048,
+      thumbWidth: 600,
+    },
+  ]}
+/>
+
+## Tech Stack
+
+- [React.js](https://reactjs.org/) with [MobX](https://mobx.js.org/README.html) for state management
+- Styling using [Styled Components](https://styled-components.com/)
+- [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/)
+- Authentication, authorization, and cloud storage using [Firebase](https://firebase.google.com/)
+- [TypeScript](https://www.typescriptlang.org/) for both the front-end and back-end
+
+## Showcase
+
+<PhotoSwipeGallery
+  id="result"
+  col={2}
+  images={[
+    {
+      src: "/images/deco-webstore/result/decoworld-1.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-2.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-3.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-4.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-5.png",
+      width: 1920,
+      height: 1436,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-6.png",
+      width: 1920,
+      height: 1143,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-7.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-8.png",
+      width: 1920,
+      height: 937,
+    },
+    {
+      src: "/images/deco-webstore/result/decoworld-9.png",
+      width: 1920,
+      height: 937,
+    },
+  ]}
+/>
+
+### Key Features
+
+<PhotoSwipeGallery
+  id="result"
+  col={2}
+  images={[
+    {
+      caption: "Skeleton loading",
+      src: "/images/deco-webstore/gifs/skeleton-loading.gif",
+      width: 900,
+      height: 609,
+    },
+    {
+      caption: "Sorting and filtering",
+      src: "/images/deco-webstore/gifs/sort-and-filter.gif",
+      width: 900,
+      height: 441,
+    },
+    {
+      caption: "Wishlisting an item",
+      src: "/images/deco-webstore/gifs/wishlist-action.gif",
+      width: 432,
+      height: 786,
+    },
+    {
+      caption: "Category selection (Tree select)",
+      src: "/images/deco-webstore/gifs/treeselect.gif",
+      width: 900,
+      height: 244,
+    },
+    {
+      caption: "Navigation",
+      src: "/images/deco-webstore/gifs/nav.gif",
+      width: 900,
+      height: 156,
+    },
+  ]}
+/>
+
+## Source Code
+
+The source code for both the front-end and back-end of this project can be found [here](https://github.com/DewitteRuben/reactjs_decoration_webshop_2020).

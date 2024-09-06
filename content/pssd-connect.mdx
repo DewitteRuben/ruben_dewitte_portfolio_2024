@@ -1,0 +1,134 @@
+---
+title: "PSSD Connect"
+publishedAt: "2024-01-07"
+summary: "PSSD Connect is a secure dating app for those with Post-SSRI Sexual Dysfunction (PSSD). It fosters connections within a supportive community, focusing on privacy, understanding, and meaningful relationships."
+---
+
+As a co-founder of the [PSSD Network](pssdnetwork.org) and someone with friends affected by the condition, I have witnessed firsthand the challenges of finding meaningful connections.
+
+Traditional dating apps often fail to meet the unique needs of people with conditions like PSSD, prompting me to create an application that facilitates deep and lasting relationships tailored to these specific circumstances.
+
+## Project Scope
+
+Given that I am the sole developer, I focused on maintaining simplicity in the project to enable a swift launch of a basic version. This approach allows users to start providing feedback and connecting with each other as soon as possible.
+
+### Initial Features
+
+The initial version of the app includes:
+
+- User login and registration
+
+  - SMS verification for added security
+
+- Swipeable cards similar to other dating apps
+
+- Global and local suggestions and matching based on user preferences
+
+- Profile customization
+
+- Specific features for PSSD, like tracking medication history and symptom duration
+
+- Push notifications to alert users
+
+## Development Overview
+
+To keep things simple, I chose to build a [Progressive Web App (PWA)](https://web.dev/articles/what-are-pwas) instead of using [React Native](https://reactnative.dev/). PWAs are easier to manage and work on any web browser.
+
+React Native would have required extra effort to make it work on both Android and iOS, and there wouldn't be a web version. Using [react-native-web](https://necolas.github.io/react-native-web/) for the web version would also involve handling many additional details. Plus, I don’t have access to a MacBook right now, which is needed for iOS development. So, for this project, a PWA was the better choice.
+
+### Tech Stack
+
+- **Frontend**:
+
+  - **React.js** with **MobX** for state management
+  - **Chakra UI** for a robust and responsive user interface
+  - **Formik** for handling forms and validation
+  - **Vite** for fast development and build processes
+  - **TypeScript** for type-safe development across both frontend and backend
+
+- **Backend**:
+
+  - **Node.js** with **Express** for server-side logic
+  - **Firebase** for user authentication, push notifications, and SMS verification
+  - **MongoDB** for storing user data and matches
+
+- **Tools and Services**:
+  - **Linux VPS** for hosting and deployment
+  - **Docker** and **Docker Compose** for containerization and orchestration
+  - **Sentry.io** for monitoring and tracking production issues
+  - **Getstream.io** for real-time chat functionality
+  - **Socket.io** to support real-time updates
+
+## Application Showcase
+
+Below is a showcase of the application's main screens:
+
+<PhotoSwipeGallery
+  id="pssd-connect-showcase"
+  images={[
+    {
+      src: "/images/pssd-connect/entrypoint.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/profile.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/preview-profile.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/edit-profile.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/crop-image.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/suggestion.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/push-notification.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/messages.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/chat-example-1.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+    {
+      src: "/images/pssd-connect/chat-example-2.jpg",
+      width: 1080,
+      height: 2340,
+      thumbWidth: 200,
+    },
+  ]}
+/>
+
+## GitHub Repository and Live Site
+
+The source code for PSSD Connect is available on [GitHub](https://github.com/DewitteRuben/pssd-connect), and the application is currently self-hosted at [pssdconnect.org](https://pssdnetwork.org).

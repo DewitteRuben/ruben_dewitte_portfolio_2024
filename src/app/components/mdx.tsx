@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 // import { TweetComponent } from "./tweet";
 import { highlight } from "sugar-high";
 import React from "react";
+import PhotoSwipeGallery from "./photoswipe";
 
 function Table({ data }: any) {
   let headers = data.headers.map((header: string, index: number) => (
@@ -154,6 +155,7 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   Image: RoundedImage,
+  PhotoSwipeGallery,
   a: CustomLink,
   Callout,
   ProsCard,

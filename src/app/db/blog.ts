@@ -1,5 +1,8 @@
 import fs from "fs";
 import path from "path";
+import getReadingTime from "reading-time";
+import { fromMarkdown } from "mdast-util-from-markdown";
+import { toString } from "mdast-util-to-string";
 
 type Metadata = {
   title: string;
@@ -44,12 +47,14 @@ function getMDXData(dir: string) {
   let mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file));
+    const textOnPage = fromMarkdown(content);
+    const readingTime = getReadingTime(toString(textOnPage));
+
     let slug = path.basename(file, path.extname(file));
-    // let tweetIds = extractTweetIds(content);
     return {
       metadata,
       slug,
-      //   tweetIds,
+      readingTime,
       content,
     };
   });

@@ -8,7 +8,7 @@ export function Navbar() {
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
           id="nav"
         >
-          <div className="flex flex-row space-x-0 justify-between flex-1">
+          <div className="flex flex-row space-x-0 flex-1">
             <Link
               key="/"
               href="/"
@@ -16,23 +16,13 @@ export function Navbar() {
             >
               home
             </Link>
-
-            <div className="flex">
-              <Link
-                key="/experience"
-                href="/experience"
-                className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
-              >
-                experience
-              </Link>
-              <Link
-                key="/writing"
-                href="/writing"
-                className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
-              >
-                writing
-              </Link>
-            </div>
+            <Link
+              key="/experience"
+              href="/experience"
+              className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+            >
+              experience
+            </Link>
           </div>
         </nav>
       </div>

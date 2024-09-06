@@ -3,13 +3,15 @@ import { Suspense } from "react";
 import { getBlogPosts } from "../db/blog";
 
 export const metadata = {
-  title: "Writing",
+  title: "Projects",
   description:
     "Read my write-ups on software development, personal projects, and more",
 };
 
 export default function BlogPage() {
-  let allBlogs = getBlogPosts();
+  const allBlogs = getBlogPosts();
+
+  console.log(allBlogs);
 
   return (
     <section>
