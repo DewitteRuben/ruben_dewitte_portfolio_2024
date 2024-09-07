@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { getContent } from "./db/content";
 import Link from "next/link";
+import DarkModeToggle from "./components/darkmode";
 
 export default function Home() {
   const allBlogs = getContent(["personal-projects"]);
@@ -19,7 +20,7 @@ export default function Home() {
           src="/images/circular_profile.jpg"
           alt="Rounded avatar"
         />
-        <div className="sm:ml-8">
+        <div className="sm:ml-8 relative">
           <h1 className="text-2xl font-medium tracking-tighter">
             hoi, I'm Ruben 👋
             <span className="block text-slate-500 dark:text-neutral-400 font-normal text-lg mt-2">
@@ -70,6 +71,7 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <DarkModeToggle />
         </div>
       </div>
       <div className="prose prose-neutral dark:prose-invert">
@@ -79,43 +81,6 @@ export default function Home() {
           been driven by a commitment to creating impactful solutions that make
           a difference.
         </p>
-      </div>
-      <hr className="h-px my-8 bg-gray-200 border-neutral-100 dark:border-neutral-800" />
-
-      <h2 className="text-xl font-medium tracking-tighter mb-4">
-        Personal projects
-      </h2>
-
-      <div className="grid gap-4 grid-cols-2">
-        {allBlogs
-          .sort((a, b) => {
-            if (
-              new Date(a.metadata.publishedAt) >
-              new Date(b.metadata.publishedAt)
-            ) {
-              return -1;
-            }
-            return 1;
-          })
-          .map((post) => (
-            <Link
-              key={post.slug}
-              className="flex flex-col space-y-1 mb-4"
-              href={`/project/${post.slug}`}
-            >
-              <div className="w-full flex flex-col">
-                <p className="text-neutral-900 dark:text-neutral-100 font-medium tracking-tight mb-2">
-                  {post.metadata.title}
-                </p>
-                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                  {post.metadata.summary}
-                </p>
-                <span className="block text-slate-500 dark:text-neutral-400 font-normal text-sm mt-2">
-                  Published on {post.metadata.publishedAt}
-                </span>
-              </div>
-            </Link>
-          ))}
       </div>
     </section>
   );

@@ -23,6 +23,13 @@ export function Navbar() {
             >
               work
             </Link>
+            <Link
+              key="/project"
+              href="/project"
+              className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+            >
+              projects
+            </Link>
           </div>
         </nav>
       </div>

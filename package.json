@@ -13,6 +13,7 @@
     "mdast-util-to-string": "^4.0.0",
     "next": "14.2.5",
     "next-mdx-remote": "^5.0.0",
+    "next-themes": "^0.3.0",
     "photoswipe": "^5.4.4",
     "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "react": "^18",
