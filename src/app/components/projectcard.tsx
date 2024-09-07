@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./projectcard.css";
 import { FaGithub } from "react-icons/fa";
 
@@ -5,6 +6,7 @@ type TProjectCard = {
   title: string;
   src?: string;
   description: string;
+  external?: boolean;
   link?: string;
   githubRepo?: string;
 };
@@ -12,15 +14,17 @@ type TProjectCard = {
 const ProjectCard: React.FC<TProjectCard> = ({
   description,
   githubRepo,
+  external = true,
   src,
   link,
   title,
 }) => {
+  const Tag = external ? `a` : Link;
   return (
-    <a
+    <Tag
       className="flex flex-col justify-start bg-slate-100 transition-colors rounded-xl p-8 relative project-card"
-      target="_blank"
-      href={link}
+      target={external ? "_blank" : undefined}
+      href={link!}
     >
       {src && (
         <div className="relative rounded-xl mb-4 shadow-project">
@@ -43,7 +47,7 @@ const ProjectCard: React.FC<TProjectCard> = ({
           className="project-card-child absolute bottom-4 right-4 hover:opacity-40"
         />
       </a>
-    </a>
+    </Tag>
   );
 };
 

@@ -47,23 +47,6 @@ export default function BlogPage() {
               src={post.metadata.imageSrc}
               githubRepo={post.metadata.githubRepo}
             />
-            // <Link
-            //   key={post.slug}
-            //   className="flex flex-col space-y-1 mb-4"
-            //   href={`/project/${post.slug}`}
-            // >
-            //   <div className="w-full flex flex-col">
-            //     <p className="text-neutral-900 dark:text-neutral-100 font-medium tracking-tight mb-2">
-            //       {post.metadata.title}
-            //     </p>
-            //     <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-            //       {post.metadata.summary}
-            //     </p>
-            //     <span className="block text-slate-500 dark:text-neutral-400 font-normal text-sm mt-2">
-            //       Published on {post.metadata.publishedAt}
-            //     </span>
-            //   </div>
-            // </Link>
           ))}
       </div>
       <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
@@ -82,23 +65,15 @@ export default function BlogPage() {
             return 1;
           })
           .map((post) => (
-            <Link
-              key={post.slug}
-              className="flex flex-col space-y-1 mb-4"
-              href={`/project/${post.slug}`}
-            >
-              <div className="w-full flex flex-col">
-                <p className="text-neutral-900 dark:text-neutral-100 font-medium tracking-tight mb-2">
-                  {post.metadata.title}
-                </p>
-                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                  {post.metadata.summary}
-                </p>
-                <span className="block text-slate-500 dark:text-neutral-400 font-normal text-sm mt-2">
-                  Published on {post.metadata.publishedAt}
-                </span>
-              </div>
-            </Link>
+            <ProjectCard
+              external={false}
+              key={post.metadata.title}
+              description={post.metadata.summary}
+              title={post.metadata.title}
+              link={`/project/${post.slug}`}
+              src={post.metadata.imageSrc}
+              githubRepo={post.metadata.githubRepo}
+            />
           ))}
       </div>
     </section>
