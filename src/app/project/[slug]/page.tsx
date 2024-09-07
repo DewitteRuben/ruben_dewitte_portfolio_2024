@@ -15,6 +15,7 @@ import {
 } from "@/app/components/mdx";
 import PhotoSwipeGallery from "@/app/components/photoswipe";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { formatDate } from "@/app/utils";
 
 const components = {
   h1: createHeading(1),
@@ -75,38 +76,6 @@ export async function generateMetadata({
       images: [ogImage],
     },
   };
-}
-
-function formatDate(date: string) {
-  noStore();
-  let currentDate = new Date().getTime();
-  if (!date.includes("T")) {
-    date = `${date}T00:00:00`;
-  }
-  let targetDate = new Date(date).getTime();
-  let timeDifference = Math.abs(currentDate - targetDate);
-  let daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-  let fullDate = new Date(date).toLocaleString("en-us", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-
-  if (daysAgo < 1) {
-    return "Today";
-  } else if (daysAgo < 7) {
-    return `${fullDate} (${daysAgo}d ago)`;
-  } else if (daysAgo < 30) {
-    const weeksAgo = Math.floor(daysAgo / 7);
-    return `${fullDate} (${weeksAgo}w ago)`;
-  } else if (daysAgo < 365) {
-    const monthsAgo = Math.floor(daysAgo / 30);
-    return `${fullDate} (${monthsAgo}mo ago)`;
-  } else {
-    const yearsAgo = Math.floor(daysAgo / 365);
-    return `${fullDate} (${yearsAgo}y ago)`;
-  }
 }
 
 export async function generateStaticParams() {
