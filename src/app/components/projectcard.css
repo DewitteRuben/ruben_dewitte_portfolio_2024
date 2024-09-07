@@ -1,0 +1,9 @@
+.project-card {
+}
+
+.project-card-child {
+}
+
+.project-card:hover:not(:has(.project-card-child:hover)) {
+  background-color: rgba(226, 232, 240, 0.7);
+}

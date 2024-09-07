@@ -10,8 +10,6 @@ import Link from "next/link";
 import DarkModeToggle from "./components/darkmode";
 
 export default function Home() {
-  const allBlogs = getContent(["personal-projects"]);
-
   return (
     <section>
       <div className="flex flex-row flex-wrap">

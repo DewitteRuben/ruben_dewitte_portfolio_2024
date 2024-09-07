@@ -59,6 +59,8 @@ const PhotoSwipeGallery: React.FC<TPhotoSwipeGallery> = ({
           rel="noreferrer"
         >
           <img
+            loading="lazy"
+            decoding="async"
             width={image.thumbWidth}
             height={image.thumbHeight}
             src={image.thumbnailURL ?? image.src}

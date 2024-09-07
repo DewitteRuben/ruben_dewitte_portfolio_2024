@@ -70,7 +70,7 @@ export default function RootLayout({
                 className="mr-4"
                 rel="noopener noreferrer"
               >
-                <FaEnvelope />
+                <FaEnvelope className="hover:opacity-60" />
               </a>
               <a
                 href="https://www.linkedin.com/in/rubendewitte/"
@@ -78,7 +78,7 @@ export default function RootLayout({
                 className="mr-4"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin />
+                <FaLinkedin className="hover:opacity-60" />
               </a>
               <a
                 href="https://github.com/DewitteRuben"
@@ -86,7 +86,7 @@ export default function RootLayout({
                 className="mr-4"
                 rel="noopener noreferrer"
               >
-                <FaGithub />
+                <FaGithub className="hover:opacity-60" />
               </a>
             </div>
           </footer>

@@ -11,7 +11,10 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <div onClick={toggleTheme} className="cursor-pointer mr-4">
+    <div
+      onClick={toggleTheme}
+      className="hover:cursor-pointer hover:opacity-60 mr-4"
+    >
       {theme === "light" ? <IoMoon /> : <IoSunny />}
       <span className="sr-only">Toggle Theme</span>
     </div>

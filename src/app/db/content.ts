@@ -7,6 +7,9 @@ import { toString } from "mdast-util-to-string";
 type Metadata = {
   title: string;
   publishedAt: string;
+  imageSrc?: string;
+  link?: string;
+  githubRepo?: string;
   summary: string;
   image?: string;
 };
