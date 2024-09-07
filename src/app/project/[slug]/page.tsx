@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { Suspense, cache } from "react";
 import { notFound } from "next/navigation";
 import { unstable_noStore as noStore } from "next/cache";
-import { getBlogPosts } from "@/app/db/blog";
+import { getContent } from "@/app/db/content";
 import { CustomMDX } from "@/app/components/mdx";
 
 export async function generateMetadata({
   params,
 }: any): Promise<Metadata | undefined> {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  let post = getContent(["personal-projects"]).find(
+    (post) => post.slug === params.slug
+  );
   if (!post) {
     return;
   }
@@ -80,7 +82,9 @@ function formatDate(date: string) {
 }
 
 export default function Blog({ params }: any) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  let post = getContent(["personal-projects"]).find(
+    (post) => post.slug === params.slug
+  );
 
   if (!post) {
     notFound();

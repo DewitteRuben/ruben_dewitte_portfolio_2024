@@ -5,11 +5,11 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
-import { getBlogPosts } from "./db/blog";
+import { getContent } from "./db/content";
 import Link from "next/link";
 
 export default function Home() {
-  const allBlogs = getBlogPosts();
+  const allBlogs = getContent(["personal-projects"]);
 
   return (
     <section>
@@ -80,8 +80,13 @@ export default function Home() {
           a difference.
         </p>
       </div>
-      <h2 className="text-xl font-medium tracking-tighter mb-4">Personal projects</h2>
-      <div>
+      <hr className="h-px my-8 bg-gray-200 border-neutral-100 dark:border-neutral-800" />
+
+      <h2 className="text-xl font-bold tracking-tighter mb-4">
+        Personal projects
+      </h2>
+
+      <div className="grid gap-4 grid-cols-2">
         {allBlogs
           .sort((a, b) => {
             if (
@@ -99,12 +104,15 @@ export default function Home() {
               href={`/project/${post.slug}`}
             >
               <div className="w-full flex flex-col">
-                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                <p className="text-neutral-900 dark:text-neutral-100 font-medium tracking-tight mb-2">
                   {post.metadata.title}
-                  <span className="block text-slate-500 dark:text-neutral-400 font-normal text-sm mt-2">
-                    Published on {post.metadata.publishedAt}
-                  </span>
                 </p>
+                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                  {post.metadata.summary}
+                </p>
+                <span className="block text-slate-500 dark:text-neutral-400 font-normal text-sm mt-2">
+                  Published on {post.metadata.publishedAt}
+                </span>
               </div>
             </Link>
           ))}

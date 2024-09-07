@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { getBlogPosts } from "../db/blog";
+import { getContent } from "../db/content";
 
 export const metadata = {
   title: "Projects",
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  const allBlogs = getBlogPosts();
+  const allBlogs = getContent(["personal-projects"]);
 
   console.log(allBlogs);
 

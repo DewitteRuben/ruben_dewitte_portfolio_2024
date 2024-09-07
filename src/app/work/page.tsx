@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Experience",
-  description: "A summary of my (work) experience and contributions.",
+  title: "Work",
+  description: "A summary of my work experience and contributions.",
 };
 
 export default function WorkPage() {
