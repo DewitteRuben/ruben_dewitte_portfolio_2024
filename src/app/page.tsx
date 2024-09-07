@@ -82,7 +82,7 @@ export default function Home() {
       </div>
       <hr className="h-px my-8 bg-gray-200 border-neutral-100 dark:border-neutral-800" />
 
-      <h2 className="text-xl font-bold tracking-tighter mb-4">
+      <h2 className="text-xl font-medium tracking-tighter mb-4">
         Personal projects
       </h2>
 
