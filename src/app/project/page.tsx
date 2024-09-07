@@ -19,8 +19,10 @@ export default function BlogPage() {
           Here, you'll find a range of professional and hobby projects I've
           worked on over the years.
         </p>
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">Personal projects</h2>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        <h2 className="font-medium text-xl mb-5 tracking-tighter">
+          Personal projects
+        </h2>
       </div>
       <div className="grid gap-4 grid-cols-2">
         {allBlogs

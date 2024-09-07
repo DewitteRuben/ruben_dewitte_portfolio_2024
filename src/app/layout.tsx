@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import DarkModeToggle from "./components/darkmode";
 
 import "./globals.css";
 import { Navbar } from "./components/nav";
 import { FaEnvelope, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "./components/theme-provide";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rubendewitte.com"),
@@ -52,7 +53,7 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-2xl mb-40 flex flex-col mx-4 mt-8 lg:mx-auto">
+      <body className="antialiased max-w-2xl mb-40 flex flex-col mx-4 mt-4 lg:mx-auto">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
             <Navbar />
@@ -61,6 +62,8 @@ export default function RootLayout({
           <footer className="px-4 mt-6 md:px-0 border-t border-neutral-100 dark:border-neutral-800 py-8 text-neutral-600 dark:text-neutral-400 text-sm tracking-tight flex justify-between">
             <p>© Ruben Dewitte</p>
             <div className="flex text-lg">
+              <DarkModeToggle />
+
               <a
                 href="mailto:rubendewitte1998@gmail.com"
                 target="_blank"

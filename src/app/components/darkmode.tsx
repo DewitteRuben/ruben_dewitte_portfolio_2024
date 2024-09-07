@@ -11,15 +11,10 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <button
-      onClick={toggleTheme}
-      className={`border rounded-md w-6 h-6 flex items-center justify-center border-${
-        theme === "light" ? "grey-800" : "gray-100"
-      } absolute top-0 -right-16`}
-    >
+    <div onClick={toggleTheme} className="cursor-pointer mr-4">
       {theme === "light" ? <IoMoon /> : <IoSunny />}
       <span className="sr-only">Toggle Theme</span>
-    </button>
+    </div>
   );
 };
 

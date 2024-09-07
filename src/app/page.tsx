@@ -28,7 +28,7 @@ export default function Home() {
             </span>
           </h1>
           <div className="prose prose-neutral dark:prose-invert">
-            <div className="flex text-base">
+            <div className="flex text-base flex-wrap flex-col gap-y-4 min-[490px]:flex-row">
               <a
                 href="mailto:rubendewitte1998@gmail.com"
                 target="_blank"
@@ -71,7 +71,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <DarkModeToggle />
         </div>
       </div>
       <div className="prose prose-neutral dark:prose-invert">
