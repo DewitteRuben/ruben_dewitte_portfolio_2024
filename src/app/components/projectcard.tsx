@@ -33,6 +33,7 @@ const ProjectCard: React.FC<TProjectCard> = ({
     <Tag
       className="flex flex-col justify-start bg-slate-100 dark:bg-slate-800 transition-colors rounded-xl p-8 relative project-card"
       target={external ? "_blank" : undefined}
+      prefetch={false}
       href={link!}
     >
       {src && (
