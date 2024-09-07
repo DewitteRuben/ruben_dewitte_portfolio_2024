@@ -27,7 +27,7 @@ export default function BlogPage() {
           Open source
         </h2>
       </div>
-      <div className="grid gap-4 min-[600px]:grid-cols-2 grid-cols-1">
+      <div className="grid gap-6 min-[600px]:grid-cols-2 grid-cols-1">
         {openSourceProjects
           .sort((a, b) => {
             if (
@@ -53,7 +53,7 @@ export default function BlogPage() {
       <div className="prose prose-neutral dark:prose-invert">
         <h2 className="font-medium text-xl mb-5 tracking-tighter">Personal</h2>
       </div>
-      <div className="grid gap-4 min-[600px]:grid-cols-2 grid-cols-1">
+      <div className="grid gap-6 min-[600px]:grid-cols-2 grid-cols-1">
         {personalProjects
           .sort((a, b) => {
             if (

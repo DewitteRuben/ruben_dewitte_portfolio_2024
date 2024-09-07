@@ -5,5 +5,5 @@
 }
 
 .project-card:hover:not(:has(.project-card-child:hover)) {
-  background-color: rgba(226, 232, 240, 0.7);
+  @apply bg-slate-200/70 dark:bg-slate-800/70;
 }

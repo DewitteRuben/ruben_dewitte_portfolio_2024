@@ -22,7 +22,7 @@ const ProjectCard: React.FC<TProjectCard> = ({
   const Tag = external ? `a` : Link;
   return (
     <Tag
-      className="flex flex-col justify-start bg-slate-100 transition-colors rounded-xl p-8 relative project-card"
+      className="flex flex-col justify-start bg-slate-100 dark:bg-slate-800 transition-colors rounded-xl p-8 relative project-card"
       target={external ? "_blank" : undefined}
       href={link!}
     >
@@ -37,10 +37,10 @@ const ProjectCard: React.FC<TProjectCard> = ({
           />
         </div>
       )}
-      <h3 className="text-slate-700 font-semibold tracking-tight text-xl">
+      <h3 className="text-l mt-2 mb-2.5 leading-7 font-medium">
         {title}
       </h3>
-      <h3 className="text-slate-500 text-base">{description}</h3>
+      <p className="text-neutral-700 dark:text-neutral-300">{description}</p>
       <a href={githubRepo} target="_blank">
         <FaGithub
           fontSize={24}
