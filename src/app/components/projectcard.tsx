@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./projectcard.css";
 import { FaGithub } from "react-icons/fa";
 import { MouseEventHandler } from "react";
+import Image from "next/image";
 
 type TProjectCard = {
   title: string;
@@ -33,14 +34,14 @@ const ProjectCard: React.FC<TProjectCard> = ({
     <Tag
       className="flex flex-col justify-start bg-slate-100 dark:bg-slate-800 transition-colors rounded-xl p-8 relative project-card"
       target={external ? "_blank" : undefined}
-      prefetch={false}
       href={link!}
     >
       {src && (
         <div className="relative rounded-xl mb-4 shadow-project">
-          <img
-            loading="lazy"
-            decoding="async"
+          <Image
+            alt={title}
+            width={260}
+            height={180}
             data-nimg="1"
             className="rounded-xl bg-cover min-h-[180px]"
             src={src}

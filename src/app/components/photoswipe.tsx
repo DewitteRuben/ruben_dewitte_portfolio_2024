@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import React from "react";
@@ -58,11 +59,12 @@ const PhotoSwipeGallery: React.FC<TPhotoSwipeGallery> = ({
           target="_blank"
           rel="noreferrer"
         >
-          <img
+          <Image
             loading="lazy"
             decoding="async"
-            width={image.thumbWidth}
-            height={image.thumbHeight}
+            alt={image.src.split("/").pop()!.split(".")[0]}
+            width={image.width}
+            height={image.height}
             src={image.thumbnailURL ?? image.src}
           />
           {image.caption && (
