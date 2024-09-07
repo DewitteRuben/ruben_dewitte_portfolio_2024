@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getContent } from "../db/content";
 import ProjectCard from "../components/projectcard";
 
@@ -9,8 +8,9 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  const personalProjects = getContent(["personal-projects"]);
-  const openSourceProjects = getContent(["opensource-projects"]);
+  const projects = getContent()
+  const openSourceProjects = projects.filter((p) => p.metadata.type === "open-source")
+  const personalProjects = projects.filter((p) => p.metadata.type === "personal")
 
   return (
     <section>

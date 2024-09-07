@@ -5,8 +5,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import React from "react";
 import PhotoSwipeGallery from "./photoswipe";
+import path from "path";
+import { CONTENT_PATH } from "../db/content";
 
-function Table({ data }: any) {
+export function Table({ data }: any) {
   let headers = data.headers.map((header: string, index: number) => (
     <th key={index}>{header}</th>
   ));
@@ -28,7 +30,7 @@ function Table({ data }: any) {
   );
 }
 
-function CustomLink(props: any) {
+export function CustomLink(props: any) {
   let href = props.href;
 
   if (href.startsWith("/")) {
@@ -46,11 +48,11 @@ function CustomLink(props: any) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props: any) {
+export function RoundedImage(props: any) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
-function Callout(props: any) {
+export function Callout(props: any) {
   return (
     <div className="px-4 py-3 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
@@ -59,7 +61,7 @@ function Callout(props: any) {
   );
 }
 
-function ProsCard({ title, pros }: any) {
+export function ProsCard({ title, pros }: any) {
   return (
     <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
       <span>{`You might use ${title} if...`}</span>
@@ -88,7 +90,7 @@ function ProsCard({ title, pros }: any) {
   );
 }
 
-function ConsCard({ title, cons }: any) {
+export function ConsCard({ title, cons }: any) {
   return (
     <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
       <span>{`You might not use ${title} if...`}</span>
@@ -113,12 +115,12 @@ function ConsCard({ title, cons }: any) {
   );
 }
 
-function Code({ children, ...props }: any) {
+export function Code({ children, ...props }: any) {
   let codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
-function slugify(str: any) {
+export function slugify(str: any) {
   return str
     .toString()
     .toLowerCase()
@@ -129,7 +131,7 @@ function slugify(str: any) {
     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
 }
 
-function createHeading(level: any) {
+export function createHeading(level: any) {
   return ({ children }: any) => {
     let slug = slugify(children);
     return React.createElement(
@@ -145,30 +147,4 @@ function createHeading(level: any) {
       children
     );
   };
-}
-
-let components = {
-  h1: createHeading(1),
-  h2: createHeading(2),
-  h3: createHeading(3),
-  h4: createHeading(4),
-  h5: createHeading(5),
-  h6: createHeading(6),
-  Image: RoundedImage,
-  PhotoSwipeGallery,
-  a: CustomLink,
-  Callout,
-  ProsCard,
-  ConsCard,
-  code: Code,
-  Table,
-};
-
-export function CustomMDX(props: any) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  );
 }

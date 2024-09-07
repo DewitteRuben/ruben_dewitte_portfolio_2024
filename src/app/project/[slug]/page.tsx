@@ -1,16 +1,43 @@
 import type { Metadata } from "next";
 import { Suspense, cache } from "react";
-import { notFound } from "next/navigation";
+import fs from "fs";
 import { unstable_noStore as noStore } from "next/cache";
-import { getContent } from "@/app/db/content";
-import { CustomMDX } from "@/app/components/mdx";
+import { CONTENT_PATH, getContentBySlug } from "@/app/db/content";
+import {
+  createHeading,
+  RoundedImage,
+  CustomLink,
+  Callout,
+  ProsCard,
+  ConsCard,
+  Code,
+  Table,
+} from "@/app/components/mdx";
+import PhotoSwipeGallery from "@/app/components/photoswipe";
+import { MDXRemote } from "next-mdx-remote/rsc";
+
+const components = {
+  h1: createHeading(1),
+  h2: createHeading(2),
+  h3: createHeading(3),
+  h4: createHeading(4),
+  h5: createHeading(5),
+  h6: createHeading(6),
+  Image: RoundedImage,
+  PhotoSwipeGallery,
+  a: CustomLink,
+  Callout,
+  ProsCard,
+  ConsCard,
+  code: Code,
+  Table,
+};
 
 export async function generateMetadata({
   params,
 }: any): Promise<Metadata | undefined> {
-  let post = getContent(["personal-projects"]).find(
-    (post) => post.slug === params.slug
-  );
+  let post = getContentBySlug(params.slug)
+
   if (!post) {
     return;
   }
@@ -20,7 +47,8 @@ export async function generateMetadata({
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata;
+  } = post.data;
+
   let ogImage = image
     ? `https://rubendewitte.com${image}`
     : `https://rubendewitte.com/og?title=${title}`;
@@ -33,7 +61,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `https://rubendewitte.com/writing/${post.slug}`,
+      url: `https://rubendewitte.com/writing/${params.slug}`,
       images: [
         {
           url: ogImage,
@@ -81,14 +109,15 @@ function formatDate(date: string) {
   }
 }
 
-export default function Blog({ params }: any) {
-  let post = getContent(["personal-projects"]).find(
-    (post) => post.slug === params.slug
-  );
+export async function generateStaticParams() {
+  return fs
+    .readdirSync(CONTENT_PATH)
+    .map((path) => path.replace(/\.mdx?$/, ""))
+    .map((slug) => ({ params: { slug } }));
+}
 
-  if (!post) {
-    notFound();
-  }
+export default function Blog({ params }: any) {
+  const { content, data } = getContentBySlug(params.slug);
 
   return (
     <section>
@@ -99,14 +128,14 @@ export default function Blog({ params }: any) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `https://rubendewitte.com${post.metadata.image}`
-              : `https://rubendewitte.com/og?title=${post.metadata.title}`,
-            url: `https://rubendewitte.com/writing/${post.slug}`,
+            headline: data.title,
+            datePublished: data.publishedAt,
+            dateModified: data.publishedAt,
+            description: data.summary,
+            image: data.image
+              ? `https://rubendewitte.com${data.image}`
+              : `https://rubendewitte.com/og?title=${data.title}`,
+            url: `https://rubendewitte.com/writing/${params.slug}`,
             author: {
               "@type": "Person",
               name: "Ruben Dewitte",
@@ -115,17 +144,17 @@ export default function Blog({ params }: any) {
         }}
       />
       <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
-        {post.metadata.title}
+        {data.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
         <Suspense fallback={<p className="h-5" />}>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
+            {formatDate(data.publishedAt)}
           </p>
         </Suspense>
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
-        <CustomMDX source={post.content} />
+        <MDXRemote source={content} components={components} />
       </article>
     </section>
   );
