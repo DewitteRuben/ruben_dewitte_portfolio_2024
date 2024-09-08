@@ -38,10 +38,8 @@ const ProjectCard: React.FC<TProjectCard> = ({
     >
       {src && (
         <div className="relative rounded-xl mb-4 shadow-project">
-          <Image
+          <img
             alt={title}
-            width={260}
-            height={180}
             data-nimg="1"
             className="rounded-xl bg-cover min-h-[180px]"
             src={src}

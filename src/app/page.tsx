@@ -1,13 +1,4 @@
-import {
-  FaEnvelope,
-  FaGithub,
-  FaLink,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
-import { getContent } from "./db/content";
-import Link from "next/link";
-import DarkModeToggle from "./components/darkmode";
+import { FaEnvelope, FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   return (
