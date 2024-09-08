@@ -65,9 +65,11 @@ export default function Home() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I am a passionate and dedicated software developer with a strong
-          background in both frontend and backend development. My career has
-          been driven by a commitment to creating impactful solutions that make
-          a difference.
+          background in both frontend and backend development.
+        </p>
+        <p>
+          My career has been driven by a commitment to creating impactful
+          solutions that make a difference.
         </p>
       </div>
     </section>
