@@ -60,6 +60,8 @@ const PhotoSwipeGallery: React.FC<TPhotoSwipeGallery> = ({
           rel="noreferrer"
         >
           <img
+            loading="lazy"
+            decoding="async"
             alt={image.src.split("/").pop()!.split(".")[0]}
             width={image.width}
             height={image.height}
