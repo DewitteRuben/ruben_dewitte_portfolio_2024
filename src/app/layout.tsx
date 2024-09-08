@@ -5,8 +5,8 @@ import DarkModeToggle from "./components/darkmode";
 
 import "./globals.css";
 import { Navbar } from "./components/nav";
-import { FaEnvelope, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
-import { ThemeProvider } from "./components/theme-provide";
+import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rubendewitte.com"),
@@ -15,6 +15,20 @@ export const metadata: Metadata = {
     template: "%s | Ruben Dewitte",
   },
   description: "Developer, architect, and creator.",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: "/images/icons/favicon-dark.svg",
+        type: "image/svg+xml",
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: "/images/icons/favicon-light.svg",
+        type: "image/svg+xml",
+      },
+    ],
+  },
   openGraph: {
     title: "Ruben Dewitte",
     description: "Developer, architect, and creator.",
@@ -47,14 +61,10 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cx(
-        // "text-black bg-white dark:text-white dark:bg-[#111010]",
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+      className={cx(GeistSans.variable, GeistMono.variable)}
     >
       <body className="antialiased max-w-2xl mb-40 flex flex-col mx-4 mt-4 lg:mx-auto">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" enableSystem>
           <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
             <Navbar />
             {children}
