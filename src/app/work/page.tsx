@@ -42,10 +42,12 @@ export default function WorkPage() {
         <ul>
           <li>
             Led the development of the{" "}
-            <strong>Record Evolution IoT platform</strong> using{" "}
-            <strong>Scrum</strong> for task estimation and scheduling. Reviewed
-            PRs, set up <strong>GitHub</strong> test automation, and mentored
-            junior team members.
+            <a href="https://studio.ironflock.com" target="_blank">
+              Record Evolution's IoT platform
+            </a>{" "}
+            using <strong>Scrum</strong> for task estimation and scheduling.
+            Reviewed PRs, set up <strong>GitHub</strong> test automation, and
+            mentored junior team members.
           </li>
           <li>
             Engineered an authentication server for a self-hosted{" "}
@@ -62,8 +64,11 @@ export default function WorkPage() {
             </a>{" "}
             application in <strong>Golang</strong> that uses{" "}
             <strong>Docker</strong> and <strong>WAMP</strong> technologies to
-            facilitate connectivity to Record Evolution’s IoT platform. This
-            agent automates the{" "}
+            facilitate connectivity to{" "}
+            <a href="https://studio.ironflock.com" target="_blank">
+              Record Evolution's IoT platform
+            </a>{" "}
+            . This agent automates the{" "}
             <strong>
               deployment, scaling, and management of containerized applications
               on Linux-based systems
