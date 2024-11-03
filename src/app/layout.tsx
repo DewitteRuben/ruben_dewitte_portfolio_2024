@@ -77,6 +77,7 @@ export default function RootLayout({
               <a
                 href="mailto:rubendewitte1998@gmail.com"
                 target="_blank"
+                aria-label="Link to Ruben's Email Address"
                 className="mr-4"
                 rel="noopener noreferrer"
               >
@@ -86,6 +87,7 @@ export default function RootLayout({
                 href="https://www.linkedin.com/in/rubendewitte/"
                 target="_blank"
                 className="mr-4"
+                aria-label="Link to Ruben's LinkedIn"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin className="hover:opacity-60" />
@@ -93,6 +95,7 @@ export default function RootLayout({
               <a
                 href="https://github.com/DewitteRuben"
                 target="_blank"
+                aria-label="Link to Ruben's GitHub account"
                 className="mr-4"
                 rel="noopener noreferrer"
               >
