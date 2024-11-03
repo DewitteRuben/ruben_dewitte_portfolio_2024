@@ -30,6 +30,7 @@ export default function Home() {
               </a>
               <a
                 href="/resume_dutch.pdf"
+                aria-label="PDF link to Ruben's resume"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -30,13 +30,15 @@ const DarkModeToggle = () => {
   }
 
   return (
-    <div
+    <a
       onClick={toggleTheme}
+      href="#"
+      aria-label="Button to toggle the theme"
       className="hover:cursor-pointer hover:opacity-60 mr-4"
     >
       {resolvedTheme === "light" ? <FaMoon /> : <FaSun />}
       <span className="sr-only">Toggle Theme</span>
-    </div>
+    </a>
   );
 };
 
