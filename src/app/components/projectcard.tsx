@@ -54,6 +54,7 @@ const ProjectCard: React.FC<TProjectCard> = ({
         href={githubRepo}
         onClick={stopPropagation}
         target="_blank"
+        aria-label={`Link to the projects GitHub of ${title}`}
         className="absolute bottom-4 right-4"
       >
         <FaGithub
