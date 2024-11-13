@@ -19,10 +19,26 @@ export default function WorkPage() {
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">
+          FrontValue B.V.
+        </h2>
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          Full Stack Developer, Nov 2024 — Present
+        </p>
+        <p>
+          I currently work as a consultant at{" "}
+          <a href="https://frontvalue.nl" target="_blank">
+            FrontValue
+          </a>
+          , a consultancy firm based in the Netherlands, where I work with
+          clients to build reliable, user-friendly web applications. (More
+          details to come...)
+        </p>
+        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">
           Record Evolution GmbH
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Lead Developer, Aug 2020 — Sep 2024
+          Lead Developer, Aug 2020 — Oct 2024
         </p>
         <p>
           I joined{" "}
