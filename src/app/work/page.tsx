@@ -38,7 +38,7 @@ export default function WorkPage() {
           Record Evolution GmbH
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Lead Developer, Aug 2020 — Oct 2024
+          Lead Developer, Aug 2020 — Nov 2024
         </p>
         <p>
           I joined{" "}
