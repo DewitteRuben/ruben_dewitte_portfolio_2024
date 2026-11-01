@@ -24,7 +24,8 @@ const apps = [
 ];
 
 const work = [
-  { company: "FrontValue", role: "DevOps engineer at Rabobank", years: "2024 — now" },
+  { company: "Rabobank", role: "DevOps engineer", years: "2024 — now" },
+  { company: "FrontValue", role: "Consultant", years: "2024 — now" },
   { company: "Record Evolution", role: "Lead developer", years: "2020 — 2024" },
   { company: "Intracto", role: "Frontend developer", years: "2019 — 2020" },
 ];

@@ -33,25 +33,37 @@ export default function WorkPage() {
           from the app and its backend to store releases and payments.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">
-          FrontValue B.V.
-        </h2>
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">Rabobank</h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          DevOps Engineer at Rabobank, Nov 2024 — Present
+          DevOps Engineer, Nov 2024 — Present
         </p>
         <p>
-          Through{" "}
-          <a href="https://frontvalue.nl" target="_blank">
-            FrontValue
-          </a>
-          , a consultancy in the Netherlands, I work at Rabobank as a DevOps
-          engineer on <strong>Nexa</strong>, the bank's internal developer
-          portal built on <strong>Backstage</strong>.
+          At Rabobank I work as a DevOps engineer on <strong>Nexa</strong>, the
+          bank's internal developer portal built on <strong>Backstage</strong>.
         </p>
         <p>
           I'm part of the Store team. The Store is the part of Nexa where teams
           across the bank provide, consume and manage services.
         </p>
+        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">
+          FrontValue B.V.
+        </h2>
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          Consultant, Nov 2024 — Present
+        </p>
+        <p>
+          <a href="https://frontvalue.nl" target="_blank">
+            FrontValue
+          </a>{" "}
+          is a consultancy in the Netherlands. Through FrontValue I work at
+          Rabobank. Within FrontValue I also:
+        </p>
+        <ul>
+          <li>Gave presentations to colleagues</li>
+          <li>Organized a hackathon together with colleagues</li>
+          <li>Shared a lot of knowledge across the company</li>
+        </ul>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">
           Record Evolution GmbH
