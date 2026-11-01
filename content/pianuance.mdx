@@ -1,0 +1,40 @@
+---
+title: "Pianuance"
+type: "app"
+publishedAt: "2026-09-01"
+icon: "/images/project/pianuance/icon.png"
+imageSrc: "/images/project/pianuance/thumb.jpg"
+summary: "A practice partner for your digital piano: the sheet music follows you as you play and marks every note."
+---
+
+Pianuance turns a digital piano into a practice partner. Connect the piano over USB or Bluetooth MIDI, open a piece, and the score follows you as you play. Every note is marked right, wrong, early or late, and the bars that need work are picked out for you.
+
+## What it does
+
+- **Practice, play-along and sight-reading** modes, with loops, slow practice and a tempo ladder
+- **Your own music**: import MusicXML, or turn PDFs and recordings into scores (Pro)
+- **Courses, exam-style tests and ear training**, plus a teacher mode for lessons
+- Runs on iPhone, iPad, Android, the web, Windows, macOS and Linux
+
+<PhotoSwipeGallery
+  id="pianuance-showcase"
+  col={3}
+  images={[
+    { src: "/images/project/pianuance/01-practice.jpg", width: 720, height: 1557, thumbWidth: 200 },
+    { src: "/images/project/pianuance/02-results.jpg", width: 720, height: 1557, thumbWidth: 200 },
+    { src: "/images/project/pianuance/03-music.jpg", width: 720, height: 1557, thumbWidth: 200 },
+    { src: "/images/project/pianuance/05-home.jpg", width: 720, height: 1557, thumbWidth: 200 },
+    { src: "/images/project/pianuance/07-courses.jpg", width: 720, height: 1557, thumbWidth: 200 },
+    { src: "/images/project/pianuance/06-teacher.jpg", width: 720, height: 1557, thumbWidth: 200 },
+  ]}
+/>
+
+## How it's built
+
+- **Expo and React Native** (New Architecture) for one codebase across phones, tablets and the web
+- **Verovio**, the C++ music engraving library, compiled for iOS and Android and called through JSI
+- **react-native-skia** and **Reanimated** to draw the score and the moving cursor smoothly on the UI thread
+- **Native MIDI modules** in Swift and Kotlin, so notes from the piano arrive with low latency
+- A practice engine in plain TypeScript, separate from the UI, that matches what you play against the score
+
+More on the [Pianuance website](https://website-production-0360.up.railway.app).

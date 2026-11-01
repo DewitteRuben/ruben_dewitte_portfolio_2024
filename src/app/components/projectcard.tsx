@@ -1,10 +1,6 @@
-"use client";
-
-import Link from "next/link";
-import "./projectcard.css";
-import { FaGithub } from "react-icons/fa";
-import { MouseEventHandler } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 type TProjectCard = {
   title: string;
@@ -13,56 +9,55 @@ type TProjectCard = {
   external?: boolean;
   link?: string;
   githubRepo?: string;
+  year?: string;
 };
 
-const ProjectCard: React.FC<TProjectCard> = ({
-  description,
-  githubRepo,
-  external = true,
-  src,
-  link,
-  title,
-}) => {
-  const Tag = external ? `a` : Link;
-
-  const stopPropagation: MouseEventHandler<HTMLAnchorElement> = (e) => {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
-  };
+const ProjectCard: React.FC<TProjectCard> = ({ description, githubRepo, external = true, src, link, title, year }) => {
+  const Tag = external ? "a" : Link;
 
   return (
-    <Tag
-      className="flex flex-col justify-start bg-slate-100 dark:bg-slate-800 transition-colors rounded-xl p-8 relative project-card"
-      target={external ? "_blank" : undefined}
-      href={link!}
-    >
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 transition-colors hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-700">
       {src && (
-        <div className="relative rounded-xl mb-4 shadow-project">
+        <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100 dark:bg-neutral-900">
           <Image
-            width={520}
-            height={360}
-            alt={title}
-            data-nimg="1"
-            className="rounded-xl bg-cover min-h-[180px]"
+            fill
+            sizes="(min-width: 640px) 320px, 100vw"
+            alt=""
+            className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
             src={src}
           />
         </div>
       )}
-      <h3 className="text-l mt-2 mb-2.5 leading-7 font-medium">{title}</h3>
-      <p className="text-neutral-700 dark:text-neutral-300">{description}</p>
-      <a
-        href={githubRepo}
-        onClick={stopPropagation}
-        target="_blank"
-        aria-label={`Link to the projects GitHub of ${title}`}
-        className="absolute bottom-4 right-4"
-      >
-        <FaGithub
-          fontSize={24}
-          className="project-card-child hover:opacity-40"
-        />
-      </a>
-    </Tag>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-medium">
+          <Tag
+            href={link!}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="after:absolute after:inset-0"
+          >
+            {title}
+          </Tag>
+        </h3>
+        <p className="mt-1.5 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{description}</p>
+        {(year || githubRepo) && (
+          <div className="mt-auto flex items-center justify-between pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+            <span className="tabular-nums">{year}</span>
+            {githubRepo && (
+              <a
+                href={githubRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${title} on GitHub`}
+                className="relative z-10 hover:text-neutral-900 dark:hover:text-neutral-100"
+              >
+                <FaGithub fontSize={18} />
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 

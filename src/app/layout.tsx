@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "Ruben Dewitte",
     template: "%s | Ruben Dewitte",
   },
-  description: "Developer, architect, and creator.",
+  description: "Software developer in the Netherlands. I build web and mobile apps, and run Holo Apps.",
   icons: {
     icon: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ruben Dewitte",
-    description: "Developer, architect, and creator.",
+    description: "Software developer in the Netherlands. I build web and mobile apps, and run Holo Apps.",
     url: "https://rubendewitte.com",
     siteName: "Ruben Dewitte",
     locale: "en_US",
@@ -63,46 +63,29 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cx(GeistSans.variable, GeistMono.variable)}
     >
-      <body className="antialiased max-w-2xl mb-40 flex flex-col mx-4 mt-4 lg:mx-auto">
+      <body className="antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
         <ThemeProvider attribute="class" enableSystem>
-          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-            <Navbar />
-            {children}
-          </main>
-          <footer className="px-4 mt-6 md:px-0 border-t border-neutral-100 dark:border-neutral-800 py-8 text-neutral-600 dark:text-neutral-400 text-sm tracking-tight flex justify-between">
-            <p>© Ruben Dewitte</p>
-            <div className="flex text-lg">
-              <DarkModeToggle />
-
-              <a
-                href="mailto:rubendewitte1998@gmail.com"
-                target="_blank"
-                aria-label="Link to Ruben's Email Address"
-                className="mr-4"
-                rel="noopener noreferrer"
-              >
-                <FaEnvelope className="hover:opacity-60" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/rubendewitte/"
-                target="_blank"
-                className="mr-4"
-                aria-label="Link to Ruben's LinkedIn"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin className="hover:opacity-60" />
-              </a>
-              <a
-                href="https://github.com/DewitteRuben"
-                target="_blank"
-                aria-label="Link to Ruben's GitHub account"
-                className="mr-4"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="hover:opacity-60" />
-              </a>
-            </div>
-          </footer>
+          <div className="mx-auto flex min-h-screen max-w-2xl flex-col px-6 pt-10 sm:pt-16">
+            <main className="flex-auto min-w-0">
+              <Navbar />
+              {children}
+            </main>
+            <footer className="mt-24 flex items-center justify-between border-t border-neutral-100 py-8 text-sm text-neutral-500 dark:border-neutral-800/70 dark:text-neutral-400">
+              <p>© {new Date().getFullYear()} Ruben Dewitte</p>
+              <div className="flex items-center gap-4 text-base">
+                <a href="mailto:rubendewitte1998@gmail.com" aria-label="Email Ruben" className="hover:text-neutral-900 dark:hover:text-neutral-100">
+                  <FaEnvelope />
+                </a>
+                <a href="https://www.linkedin.com/in/rubendewitte/" target="_blank" rel="noopener noreferrer" aria-label="Ruben on LinkedIn" className="hover:text-neutral-900 dark:hover:text-neutral-100">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/DewitteRuben" target="_blank" rel="noopener noreferrer" aria-label="Ruben on GitHub" className="hover:text-neutral-900 dark:hover:text-neutral-100">
+                  <FaGithub />
+                </a>
+                <DarkModeToggle />
+              </div>
+            </footer>
+          </div>
         </ThemeProvider>
       </body>
     </html>

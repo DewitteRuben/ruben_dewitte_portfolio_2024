@@ -1,9 +1,0 @@
-.project-card {
-}
-
-.project-card-child {
-}
-
-.project-card:hover:not(:has(.project-card-child:hover)) {
-  @apply bg-slate-200/70 dark:bg-slate-800/70;
-}

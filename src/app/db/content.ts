@@ -10,6 +10,7 @@ type Metadata = {
   publishedAt: string;
   type: string;
   imageSrc?: string;
+  icon?: string;
   link?: string;
   githubRepo?: string;
   summary: string;

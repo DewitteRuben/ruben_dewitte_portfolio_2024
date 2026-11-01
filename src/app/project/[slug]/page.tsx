@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Suspense, cache } from "react";
+import Image from "next/image";
 import fs from "fs";
-import { unstable_noStore as noStore } from "next/cache";
 import { CONTENT_PATH, getContentBySlug } from "@/app/db/content";
 import {
   createHeading,
@@ -15,7 +14,6 @@ import {
 } from "@/app/components/mdx";
 import PhotoSwipeGallery from "@/app/components/photoswipe";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { formatDate } from "@/app/utils";
 
 const components = {
   h1: createHeading(1),
@@ -62,7 +60,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `https://rubendewitte.com/writing/${params.slug}`,
+      url: `https://rubendewitte.com/project/${params.slug}`,
       images: [
         {
           url: ogImage,
@@ -104,7 +102,7 @@ export default function Blog({ params }: any) {
             image: data.image
               ? `https://rubendewitte.com${data.image}`
               : `https://rubendewitte.com/og?title=${data.title}`,
-            url: `https://rubendewitte.com/writing/${params.slug}`,
+            url: `https://rubendewitte.com/project/${params.slug}`,
             author: {
               "@type": "Person",
               name: "Ruben Dewitte",
@@ -112,15 +110,16 @@ export default function Blog({ params }: any) {
           }),
         }}
       />
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
-        {data.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(data.publishedAt)}
+      <div className="mb-10 flex items-center gap-4">
+        {data.icon && (
+          <Image src={data.icon} alt="" width={56} height={56} className="h-14 w-14 rounded-xl" />
+        )}
+        <div>
+          <h1 className="title text-2xl font-medium tracking-tighter">{data.title}</h1>
+          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+            {data.type === "app" ? `${data.publishedAt.slice(0, 4)} — now` : data.publishedAt.slice(0, 4)}
           </p>
-        </Suspense>
+        </div>
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <MDXRemote source={content} components={components} />

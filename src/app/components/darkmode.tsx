@@ -1,44 +1,30 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { IoHourglass, IoMoon, IoSunny } from "react-icons/io5";
-import { useMounted } from "../db/useMounted";
 import React from "react";
-import { FaHourglass, FaMoon, FaSun } from "react-icons/fa";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { useMounted } from "../db/useMounted";
 
 const DarkModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const mounted = useMounted();
 
-  const toggleTheme = () => {
-    setTheme(resolvedTheme === "light" ? "dark" : "light");
-  };
-
   React.useEffect(() => {
-    const icons = Array.from(document.querySelectorAll<HTMLLinkElement>('[rel="icon"]'))
-
-    for (const icon of icons) {
-      // The light icon is shown on dark mode and the dark icon is shown on light mode
-      const currentIconType = resolvedTheme === "light" ? "dark" : "light"
-      icon.href = `/images/icons/favicon-${currentIconType}.svg`
-    }
-
-  }, [resolvedTheme])
-
-  if (!mounted) {
-    return <FaHourglass className="mr-4" />;
-  }
+    const icons = Array.from(document.querySelectorAll<HTMLLinkElement>('[rel="icon"]'));
+    // The light icon is shown in dark mode and the dark icon in light mode.
+    const iconType = resolvedTheme === "light" ? "dark" : "light";
+    for (const icon of icons) icon.href = `/images/icons/favicon-${iconType}.svg`;
+  }, [resolvedTheme]);
 
   return (
-    <a
-      onClick={toggleTheme}
-      href="#"
-      aria-label="Button to toggle the theme"
-      className="hover:cursor-pointer hover:opacity-60 mr-4"
+    <button
+      type="button"
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+      aria-label="Toggle dark mode"
+      className="hover:text-neutral-900 dark:hover:text-neutral-100"
     >
-      {resolvedTheme === "light" ? <FaMoon /> : <FaSun />}
-      <span className="sr-only">Toggle Theme</span>
-    </a>
+      {!mounted ? <span className="block h-4 w-4" /> : resolvedTheme === "light" ? <FiMoon /> : <FiSun />}
+    </button>
   );
 };
 

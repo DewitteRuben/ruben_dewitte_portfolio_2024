@@ -1,136 +1,41 @@
 ---
 title: "PSSD Connect"
-type: "personal"
-publishedAt: "2024-01-07"
-imageSrc: "/images/project/pssd-connect/thumb-pssd-connect.png"
-githubRepo: "https://github.com/DewitteRuben/pssd-connect"
-summary: "A social app designed to help people suffering from PSSD find genuine connections."
+type: "app"
+publishedAt: "2026-11-01"
+icon: "/images/project/pssd-connect-2026/icon.png"
+imageSrc: "/images/project/pssd-connect-2026/thumb.jpg"
+summary: "A calm place for people living with PSSD to find friendship, company or a relationship."
 ---
 
-As a co-founder of the [PSSD Network](pssdnetwork.org) and someone with friends affected by the condition, I have witnessed firsthand the challenges of finding meaningful connections.
+PSSD (post-SSRI sexual dysfunction) can last long after someone stops taking an antidepressant. Besides sexual function, it can dull emotions and affect thinking and memory. That makes regular dating apps a hard place to be. PSSD Connect is a calm place where people living with PSSD can find friendship, company or a relationship, and nobody has to explain it.
 
-Traditional dating apps often fail to meet the unique needs of people with conditions like PSSD, prompting me to create an application that facilitates deep and lasting relationships tailored to these specific circumstances.
+## What it does
 
-## Project Scope
-
-Given that I am the sole developer, I focused on maintaining simplicity in the project to enable a swift launch of a basic version. This approach allows users to start providing feedback and connecting with each other as soon as possible.
-
-### Initial Features
-
-The initial version of the app includes:
-
-- User login and registration
-
-  - SMS verification for added security
-
-- Swipeable cards similar to other dating apps
-
-- Global and local suggestions and matching based on user preferences
-
-- Profile customization
-
-- Specific features for PSSD, like tracking medication history and symptom duration
-
-- Push notifications to alert users
-
-## Development Overview
-
-I decided to build PSSD Connect as a web app for simplicity and ease of access. While I may later rewrite it as a native iOS/Android app, starting with a Progressive Web App (PWA) allowed me to focus on getting a functional version out quickly. PWAs work across all devices via a web browser, which made it the best option for an initial launch.
-
-### Tech Stack
-
-- **Frontend**:
-
-  - **React.js** with **MobX** for state management
-  - **Chakra UI** for a robust and responsive user interface
-  - **Formik** for handling forms and validation
-  - **Vite** for fast development and build processes
-  - **TypeScript** for type-safe development across both frontend and backend
-
-- **Backend**:
-
-  - **Node.js** with **Express** for server-side logic
-  - **Firebase** for user authentication, push notifications, and SMS verification
-  - **MongoDB** for storing user data and matches
-
-- **Tools and Services**:
-  - **Linux VPS** for hosting and deployment
-  - **Docker** and **Docker Compose** for containerization and orchestration
-  - **Sentry.io** for monitoring and tracking production issues
-  - **Getstream.io** for real-time chat functionality
-  - **Socket.io** to support real-time updates
-
-## Application Showcase
-
-Below is a showcase of the application's main screens:
+- **Discover** a few people a day, at your own pace
+- **Profiles** that let people share as much or as little about their PSSD as they like
+- **Chat, voice notes and calls**
+- **Built-in safety tools** and human moderators
+- Free to use, with an optional Plus membership
+- Available in seven languages on iPhone, Android and the web
 
 <PhotoSwipeGallery
   id="pssd-connect-showcase"
-  col={4}
+  col={3}
   images={[
-    {
-      src: "/images/project/pssd-connect/entrypoint.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/profile.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/preview-profile.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/edit-profile.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/crop-image.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/suggestion.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/push-notification.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/messages.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/chat-example-1.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
-    {
-      src: "/images/project/pssd-connect/chat-example-2.jpg",
-      width: 1080,
-      height: 2340,
-      thumbWidth: 200,
-    },
+    { src: "/images/project/pssd-connect-2026/discover-light.webp", width: 780, height: 1688, thumbWidth: 200 },
+    { src: "/images/project/pssd-connect-2026/chat-light.webp", width: 780, height: 1688, thumbWidth: 200 },
+    { src: "/images/project/pssd-connect-2026/cut-hello-light.webp", width: 692, height: 1188, thumbWidth: 200 },
   ]}
 />
 
-## GitHub Repository and Live Site
+## How it's built
 
-The source code for PSSD Connect is available on [GitHub](https://github.com/DewitteRuben/pssd-connect), and the application is currently self-hosted at [pssdconnect.org](https://pssdconnect.org).
+This is my second take on PSSD Connect. The first version (2024) was a web app on Node.js, MongoDB and Firebase. In 2026 I rebuilt it from scratch as a native app.
+
+- **Expo and React Native** for iPhone, Android and the web from one codebase
+- **Supabase**: Postgres with row-level security, auth, realtime chat and edge functions
+- **LiveKit** for voice and video calls
+- **RevenueCat** for subscriptions through the App Store, Google Play and Stripe on the web
+- Browser walkthroughs that test the main flows end to end before each release
+
+More at [pssdconnect.org](https://pssdconnect.org).

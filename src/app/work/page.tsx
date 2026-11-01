@@ -9,13 +9,27 @@ export default function WorkPage() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        my work experience
+        work
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Driven by a love for creating things that matter, I work hard to make
-          solutions that really make a difference. Here’s a look at my journey
-          and what I’ve accomplished.
+          I've been building software professionally since 2019, mostly web and
+          mobile apps, and more and more the systems behind them.
+        </p>
+        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">Holo Apps</h2>
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          Founder, 2026 — Present
+        </p>
+        <p>
+          Next to my job I run{" "}
+          <a href="https://holoapps.rubendewitte.com" target="_blank">
+            Holo Apps
+          </a>
+          , a small studio where I design, build and run my own apps, such as{" "}
+          <a href="/project/pianuance">Pianuance</a> and{" "}
+          <a href="/project/pssd-connect">PSSD Connect</a>. I do everything
+          from the app and its backend to store releases and payments.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">
@@ -29,9 +43,8 @@ export default function WorkPage() {
           <a href="https://frontvalue.nl" target="_blank">
             FrontValue
           </a>
-          , a consultancy firm based in the Netherlands, where I work with
-          clients to build reliable, user-friendly web applications. (More
-          details to come...)
+          , a consultancy in the Netherlands, where I work with clients to
+          build reliable, user-friendly web applications.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">

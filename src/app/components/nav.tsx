@@ -1,40 +1,42 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/work", label: "work" },
+  { href: "/projects", label: "projects" },
+];
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    pathname === href || (href === "/projects" && pathname.startsWith("/project/"));
+
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
-        <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-          id="nav"
-        >
-          <div className="flex flex-row space-x-0 flex-1 justify-between">
-            <Link
-              key="/"
-              href="/"
-              className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
-            >
-              home
-            </Link>
-            <div className="flex">
-              <Link
-                key="/work"
-                href="/work"
-                className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
-              >
-                work
-              </Link>
-              <Link
-                key="/projects"
-                href="/projects"
-                className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
-              >
-                projects
-              </Link>
-            </div>
-          </div>
-        </nav>
+    <nav className="mb-16 flex items-center justify-between tracking-tight">
+      <Link
+        href="/"
+        className="font-medium text-neutral-900 dark:text-neutral-100 hover:opacity-70 transition-opacity"
+      >
+        ruben dewitte
+      </Link>
+      <div className="flex gap-5">
+        {links.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            aria-current={isActive(href) ? "page" : undefined}
+            className={
+              isActive(href)
+                ? "text-neutral-900 dark:text-neutral-100"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+            }
+          >
+            {label}
+          </Link>
+        ))}
       </div>
-    </aside>
+    </nav>
   );
 }
