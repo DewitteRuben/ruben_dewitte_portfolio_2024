@@ -1,0 +1,41 @@
+---
+title: "Wietly"
+type: "app"
+publishedAt: "2025-05-05"
+icon: "/images/project/wietly/icon.png"
+imageSrc: "/images/project/wietly/thumb.jpg"
+summary: "A social map for cannabis lovers: find spots and coffeeshops, check in with friends and level up."
+---
+
+Wietly is a social map for cannabis lovers. Find good places to light up, discover coffeeshops near you and see what your friends are smoking. Wietly is for adults (18+).
+
+## What it does
+
+- **A community map** of parks, benches and viewpoints, added and rated by users, with real photos
+- **Coffeeshops** nearby, with opening hours and photos
+- **Restricted zones** on the map, so you know where smoking isn't allowed
+- **Check-ins with friends**: tag friends, log your strain and follow a feed of what your friends are doing
+- **Buds, XP and ranks**: earn rewards for check-ins and new spots, climb the leaderboard and unlock profile items in the store
+
+<PhotoSwipeGallery
+  id="wietly-showcase"
+  col={3}
+  images={[
+    { src: "/images/project/wietly/01-map.jpg", width: 720, height: 1565, thumbWidth: 200 },
+    { src: "/images/project/wietly/02-spot-detail.jpg", width: 720, height: 1565, thumbWidth: 200 },
+    { src: "/images/project/wietly/03-friends-feed.jpg", width: 720, height: 1565, thumbWidth: 200 },
+    { src: "/images/project/wietly/04-check-in.jpg", width: 720, height: 1565, thumbWidth: 200 },
+    { src: "/images/project/wietly/05-profile.jpg", width: 720, height: 1565, thumbWidth: 200 },
+    { src: "/images/project/wietly/06-store.jpg", width: 720, height: 1565, thumbWidth: 200 },
+  ]}
+/>
+
+## How it's built
+
+- **Expo and React Native** (New Architecture) for iOS, Android and the web
+- **Mapbox** for the map, spots and restricted zones
+- **Supabase**: Postgres with row-level security, auth, storage and Edge Functions for push notifications, translations and scheduled jobs
+- **TanStack Query** for data fetching and caching, **PostHog** for analytics
+- A **Next.js** website with shareable spot, check-in and invite pages
+
+More on the [Wietly website](https://wietly.com).

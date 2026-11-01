@@ -27,8 +27,9 @@ export default function WorkPage() {
             Holo Apps
           </a>
           , a small studio where I design, build and run my own apps, such as{" "}
-          <a href="/project/pianuance">Pianuance</a> and{" "}
-          <a href="/project/pssd-connect">PSSD Connect</a>. I do everything
+          <a href="/project/pianuance">Pianuance</a>,{" "}
+          <a href="/project/pssd-connect">PSSD Connect</a> and{" "}
+          <a href="/project/wietly">Wietly</a>. I do everything
           from the app and its backend to store releases and payments.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
@@ -36,15 +37,20 @@ export default function WorkPage() {
           FrontValue B.V.
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Full Stack Developer, Nov 2024 — Present
+          DevOps Engineer at Rabobank, Nov 2024 — Present
         </p>
         <p>
-          I currently work as a consultant at{" "}
+          Through{" "}
           <a href="https://frontvalue.nl" target="_blank">
             FrontValue
           </a>
-          , a consultancy in the Netherlands, where I work with clients to
-          build reliable, user-friendly web applications.
+          , a consultancy in the Netherlands, I work at Rabobank as a DevOps
+          engineer on <strong>Nexa</strong>, the bank's internal developer
+          portal built on <strong>Backstage</strong>.
+        </p>
+        <p>
+          I'm part of the Store team. The Store is the part of Nexa where teams
+          across the bank provide, consume and manage services.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">

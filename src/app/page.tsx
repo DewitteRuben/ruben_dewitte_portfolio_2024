@@ -15,10 +15,16 @@ const apps = [
     icon: "/images/project/pssd-connect-2026/icon.png",
     href: "/project/pssd-connect",
   },
+  {
+    name: "Wietly",
+    description: "A social map for cannabis lovers.",
+    icon: "/images/project/wietly/icon.png",
+    href: "/project/wietly",
+  },
 ];
 
 const work = [
-  { company: "FrontValue", role: "Full-stack developer", years: "2024 — now" },
+  { company: "FrontValue", role: "DevOps engineer at Rabobank", years: "2024 — now" },
   { company: "Record Evolution", role: "Lead developer", years: "2020 — 2024" },
   { company: "Intracto", role: "Frontend developer", years: "2019 — 2020" },
 ];
@@ -57,7 +63,7 @@ export default function Home() {
             they run on.
           </p>
           <p>
-            By day I'm a full-stack consultant at{" "}
+            By day I'm a DevOps engineer at Rabobank, as a consultant for{" "}
             <a className="link-underline" href="https://frontvalue.nl" target="_blank" rel="noopener noreferrer">
               FrontValue
             </a>
