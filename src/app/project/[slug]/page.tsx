@@ -122,7 +122,7 @@ export default function Blog({ params }: any) {
         </div>
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
-        <MDXRemote source={content} components={components} />
+        <MDXRemote source={content} components={components} options={{ blockJS: false }} />
       </article>
     </section>
   );
