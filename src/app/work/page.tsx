@@ -38,13 +38,36 @@ export default function WorkPage() {
           DevOps Engineer, Nov 2024 — Present
         </p>
         <p>
-          At Rabobank I work as a DevOps engineer on <strong>Nexa</strong>, the
-          bank's internal developer portal built on <strong>Backstage</strong>.
+          Through FrontValue I work at{" "}
+          <a href="https://www.rabobank.com" target="_blank">
+            Rabobank
+          </a>{" "}
+          as a DevOps engineer on <strong>Nexa</strong>, the bank's internal
+          developer portal. Nexa is built on <strong>Backstage</strong>, the
+          open-source developer portal framework, and gives engineers across
+          the bank one place to find, build and run their software.
         </p>
         <p>
           I'm part of the Store team. The Store is the part of Nexa where teams
-          across the bank provide, consume and manage services.
+          across the bank provide, consume and manage services, so a team can
+          offer what it builds to the rest of the organization and other teams
+          can start using it without a long manual process.
         </p>
+        <h3>Key contributions</h3>
+        <ul>
+          <li>
+            Building and running the <strong>Store</strong> in Nexa, where teams
+            across the bank provide, consume and manage services.
+          </li>
+          <li>
+            Working on Nexa as a <strong>DevOps engineer</strong>: building
+            features, and keeping the platform reliable for the engineers who
+            depend on it every day.
+          </li>
+          <li>
+            Interviewing candidates for engineering roles at Rabobank.
+          </li>
+        </ul>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">
           FrontValue B.V.
@@ -53,16 +76,35 @@ export default function WorkPage() {
           Consultant, Nov 2024 — Present
         </p>
         <p>
+          I joined{" "}
           <a href="https://frontvalue.nl" target="_blank">
             FrontValue
-          </a>{" "}
-          is a consultancy in the Netherlands. Through FrontValue I work at
-          Rabobank. Within FrontValue I also:
+          </a>
+          , a consultancy in the Netherlands, in November 2024. Through
+          FrontValue I work at Rabobank.
         </p>
+        <p>
+          Besides client work, I'm active within FrontValue itself. I help
+          bring in new colleagues, share what I learn on my projects, and help
+          organize events where we learn and build things together.
+        </p>
+        <h3>Key contributions</h3>
         <ul>
-          <li>Gave presentations to colleagues</li>
-          <li>Organized a hackathon together with colleagues</li>
-          <li>Shared a lot of knowledge across the company</li>
+          <li>
+            Interviewing candidates for FrontValue and helping decide who joins
+            the team.
+          </li>
+          <li>
+            Giving <strong>presentations</strong> to colleagues about what I've
+            learned and worked on.
+          </li>
+          <li>
+            Organizing a <strong>hackathon</strong> together with colleagues.
+          </li>
+          <li>
+            Sharing a lot of knowledge across the company, so lessons from one
+            project help colleagues on theirs.
+          </li>
         </ul>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">
