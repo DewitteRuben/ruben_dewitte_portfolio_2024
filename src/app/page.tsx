@@ -69,8 +69,8 @@ export default function Home() {
               FrontValue
             </a>
             . In my own time I run{" "}
-            <a className="link-underline" href="https://holoapps.rubendewitte.com" target="_blank" rel="noopener noreferrer">
-              Holo Apps
+            <a className="link-underline" href="https://hololabs.rubendewitte.com" target="_blank" rel="noopener noreferrer">
+              Holo Labs
             </a>
             , a small studio where I make my own apps.
           </p>

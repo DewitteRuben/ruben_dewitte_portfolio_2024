@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "Ruben Dewitte",
     template: "%s | Ruben Dewitte",
   },
-  description: "Software developer in the Netherlands. I build web and mobile apps, and run Holo Apps.",
+  description: "Software developer in the Netherlands. I build web and mobile apps, and run Holo Labs.",
   icons: {
     icon: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ruben Dewitte",
-    description: "Software developer in the Netherlands. I build web and mobile apps, and run Holo Apps.",
+    description: "Software developer in the Netherlands. I build web and mobile apps, and run Holo Labs.",
     url: "https://rubendewitte.com",
     siteName: "Ruben Dewitte",
     locale: "en_US",

@@ -38,8 +38,8 @@ export default function ProjectsPage() {
           note={
             <>
               Made and run by me under{" "}
-              <a className="link-underline" href="https://holoapps.rubendewitte.com" target="_blank" rel="noopener noreferrer">
-                Holo Apps
+              <a className="link-underline" href="https://hololabs.rubendewitte.com" target="_blank" rel="noopener noreferrer">
+                Holo Labs
               </a>
               .
             </>

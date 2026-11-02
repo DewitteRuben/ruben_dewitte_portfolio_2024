@@ -17,14 +17,14 @@ export default function WorkPage() {
           mobile apps, and more and more the systems behind them.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">Holo Apps</h2>
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">Holo Labs</h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
           Founder, 2026 — Present
         </p>
         <p>
           Next to my job I run{" "}
-          <a href="https://holoapps.rubendewitte.com" target="_blank">
-            Holo Apps
+          <a href="https://hololabs.rubendewitte.com" target="_blank">
+            Holo Labs
           </a>
           , a small studio where I design, build and run my own apps, such as{" "}
           <a href="/project/pianuance">Pianuance</a>,{" "}
