@@ -76,11 +76,14 @@ export async function generateMetadata({
   };
 }
 
+// Only pages for files in content/ exist; anything else is a 404.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return fs
     .readdirSync(CONTENT_PATH)
-    .map((path) => path.replace(/\.mdx?$/, ""))
-    .map((slug) => ({ params: { slug } }));
+    .filter((file) => /\.mdx?$/.test(file))
+    .map((file) => ({ slug: file.replace(/\.mdx?$/, "") }));
 }
 
 export default function Blog({ params }: any) {

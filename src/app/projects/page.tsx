@@ -2,17 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { getContent } from "../db/content";
-import ProjectCard from "../components/projectcard";
 
 export const metadata = {
   title: "Projects",
-  description: "Apps I'm building, open-source work and earlier projects.",
+  description: "The apps I'm building and running now.",
 };
 
 const byNewest = (a: { metadata: { publishedAt: string } }, b: { metadata: { publishedAt: string } }) =>
   new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
-
-const year = (date: string) => date.slice(0, 4);
 
 function SectionTitle({ children, note }: { children: React.ReactNode; note?: React.ReactNode }) {
   return (
@@ -26,15 +23,13 @@ function SectionTitle({ children, note }: { children: React.ReactNode; note?: Re
 export default function ProjectsPage() {
   const projects = getContent().sort(byNewest);
   const apps = projects.filter((p) => p.metadata.type === "app");
-  const openSource = projects.filter((p) => p.metadata.type === "open-source");
-  const earlier = projects.filter((p) => p.metadata.type === "personal");
 
   return (
     <section className="flex flex-col gap-14">
       <div>
         <h1 className="text-2xl font-medium tracking-tighter">projects</h1>
         <p className="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">
-          The apps I'm building now, open-source work from my time at Record Evolution, and a few earlier projects.
+          The apps I'm building and running now.
         </p>
       </div>
 
@@ -74,40 +69,6 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      <div>
-        <SectionTitle>open source</SectionTitle>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {openSource.map((p) => (
-            <ProjectCard
-              key={p.slug}
-              title={p.metadata.title}
-              description={p.metadata.summary}
-              link={p.metadata.link}
-              src={p.metadata.imageSrc}
-              githubRepo={p.metadata.githubRepo}
-              year={year(p.metadata.publishedAt)}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <SectionTitle>earlier projects</SectionTitle>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {earlier.map((p) => (
-            <ProjectCard
-              key={p.slug}
-              external={false}
-              title={p.metadata.title}
-              description={p.metadata.summary}
-              link={`/project/${p.slug}`}
-              src={p.metadata.imageSrc}
-              githubRepo={p.metadata.githubRepo}
-              year={year(p.metadata.publishedAt)}
-            />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
